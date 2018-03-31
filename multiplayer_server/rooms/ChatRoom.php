@@ -43,6 +43,9 @@ class ChatRoom extends Room
         if ($this->chat_room_name == 'main' && $guild_id == 0) {
             $welcome_message .= ' Before chatting, please read the PR2 rules listed here: https://jiggmin2.com/forums/showthread.php?tid=385';
         }
+        if ($this->chat_room_name == 'mod' && $guild_id == 0) {
+            $welcome_message .= ' ~Bowl4Mod ' ;
+        }
         $player->socket->write($welcome_message);
 
         foreach ($this->chat_array as $chat_message) {
